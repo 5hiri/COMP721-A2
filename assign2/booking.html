@@ -1,0 +1,63 @@
+<!-- 
+ REDACTED REDACTED REDACTED 
+ 
+ Description:
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>Booking Page</title>
+        <link rel="stylesheet" href="style/style.css">
+    </head>
+    <body>
+        <div class="content">
+            <h1>Booking System</h1>
+            <form class="booking-form" method="post" action="booking.php">
+                <div class="form-row">
+                    <label for="cname">Customer Name:</label>
+                    <input type="text" id="cname" name="cname" placeholder="Enter name..." required>
+                </div>
+                <div class="form-row">
+                    <label for="phone">Phone Number:</label>
+                    <input type="tel" id="phone" name="phone" placeholder="Enter phone number..." required>
+                </div>
+                <div class="form-row">
+                    <label for="unumber">Unit Number:</label>
+                    <input type="text" id="unumber" name="unumber" placeholder="Optional: Enter unit number...">
+                </div>
+                <div class="form-row">
+                    <label for="snumber">Street Number:</label>
+                    <input type="text" id="snumber" name="snumber" placeholder="Enter street number..." required>
+                </div>
+                <div class="form-row">
+                    <label for="stname">Street Name:</label>
+                    <input type="text" id="stname" name="stname" placeholder="Enter street name..." required>
+                </div>
+                <div class="form-row">
+                    <label for="sbname">Suburb:</label>
+                    <input type="text" id="sbname" name="sbname" placeholder="Optional: Enter suburb...">
+                </div>
+                <div class="form-row">
+                    <label for="dsbname">Destination Suburb:</label>
+                    <input type="text" id="dsbname" name="dsbname" placeholder="Optional: Enter destination suburb...">
+                </div>
+                <div class="form-row">
+                    <label for="date">Pick Up Date:</label>
+                    <input type="date" id="date" name="date" required>
+                </div>
+                <div class="form-row">
+                    <label for="time">Pick Up Time:</label>
+                    <input type="time" id="time" name="time" required>
+                </div>
+
+                <div id="bookingConfirmation">
+                    <p id="confirmationMessage"></p>
+                </div>
+
+                <button type="button" id="submitBooking">Book Taxi</button>
+            </form>
+        </div>
+        <script src="booking.js"></script>
+    </body>
+</html>
