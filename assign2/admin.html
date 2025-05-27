@@ -3,3 +3,47 @@
  
  Description:
 -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>Admin Booking Page</title>
+        <link rel="stylesheet" href="style/style.css">
+    </head>
+    <body>
+        <div class="content">
+            <h1>Admin Booking Page</h1>
+            <div class="search-form">
+                <label for="bsearch">Search Bookings:</label>
+                <input type="text" id="bsearch" name="bsearch" placeholder="Enter search term...">
+                <input type="button" name="sbutton" id="sbutton" value="Search Bookings">
+            </div>
+            <div class="admin-results">
+                <table id="bookingTable">
+                    <thead>
+                        <tr>
+                            <th>Booking Number</th>
+                            <th>Customer Name</th>
+                            <th>Phone Number</th>
+                            <th>Unit Number</th>
+                            <th>Street Number</th>
+                            <th>Street Name</th>
+                            <th>Suburb</th>
+                            <th>Destination Suburb</th>
+                            <th>Pick Up Date</th>
+                            <th>Pick Up Time</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="bookingBody">
+                        <!-- Booking data will be populated here -->
+                    </tbody>
+                </table>
+            </div>
+            <div class="admin-messages">
+                <p id="adminMessage"></p>
+            </div>
+        </div>
+        <script src="booking.js"></script>
+    </body>
+</html>

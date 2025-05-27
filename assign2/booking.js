@@ -50,6 +50,8 @@ function handleBookingSubmission() {
         // 3. Send the form data to booking.php using AJAX request.
         console.log("Form data is valid. Sending to booking.php:", formData);
 
+        const confirmationHeadingElement = document.getElementById("confirmationHeading");
+
         fetch('booking.php', {
             method: 'POST',
             headers: {
@@ -65,8 +67,12 @@ function handleBookingSubmission() {
         })
         .then(data => {
             console.log("Success response from booking.php:", data);
+            if (confirmationHeadingElement) {
+                confirmationHeadingElement.textContent = "Thank you for your booking!"; // Set the heading text
+                confirmationHeadingElement.className = 'confirmation-heading'; // Optional: for styling
+            }
             if (confirmationMessageElement) {
-                confirmationMessageElement.textContent = "Thank you for your booking! Booking reference number: " + data.bookingNumber + ", Pickup Time: " + data.pickupTime + ", Pickup Date: " + data.pickupDate; // Display the server's response
+                confirmationMessageElement.textContent = "Booking reference number: " + data.bookingNumber + "\nPickup Time: " + data.pickupTime + "\nPickup Date: " + data.pickupDate; // Display the server's response
                 confirmationMessageElement.className = 'success'; 
             }
             document.querySelector(".booking-form").reset(); // Reset the form after successful submission
@@ -119,12 +125,12 @@ function validateFormData(data, messageElement) {
     // Create a Date object for today at 00:00:00 local time
     const todayAtMidnight = new Date(now.getFullYear(), now.getMonth(), now.getDate());
 
-    // Parse the input date string "YYYY-MM-DD" to create a Date object at 00:00:00 local time
-    const dateParts = data.date.split('-');
-    const selectedYear = parseInt(dateParts[0]);
+    // data.date is in DD-MM-YYYY format from handleBookingSubmission
+    const dateParts = data.date.split('-'); // e.g., "29-05-2025" -> ["29", "05", "2025"]
+    const selectedDay = parseInt(dateParts[0]);
     const selectedMonth = parseInt(dateParts[1]) - 1; // JavaScript months are 0-indexed (0-11)
-    const selectedDay = parseInt(dateParts[2]);
-    const selectedDateAtMidnight = new Date(selectedYear, selectedMonth, selectedDay);
+    const selectedYear = parseInt(dateParts[2]);
+    const selectedDateAtMidnight = new Date(selectedYear, selectedMonth, selectedDay); // Correctly new Date(2025, 4, 29)
 
     // Check if the selected date is in the past
     if (selectedDateAtMidnight < todayAtMidnight) {
@@ -149,7 +155,7 @@ function validateFormData(data, messageElement) {
                 messageElement.textContent = "Please select a time that is in the future for today's date.";
                 messageElement.className = 'error';
             }
-            return false;x
+            return false;
         }
     }
 
