@@ -1,14 +1,20 @@
 <!-- 
  REDACTED REDACTED REDACTED 
  
- Description:
+ Description: HTML page for the CabsOnline admin interface.
+ This page provides administrative functionality for managing taxi bookings.
+ Includes search capabilities for finding specific bookings by reference number
+ or displaying unassigned bookings within a 2-hour window. Features a dynamic
+ table that displays booking details and allows administrators to assign taxis
+ to pending requests. Integrates with admin.js for client-side functionality
+ and admin.php for server-side operations.
 -->
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <title>Admin Booking Page</title>
-        <link rel="stylesheet" href="style/style.css">
+        <link rel="stylesheet" href="style.css">
     </head>
     <body>
         <div class="content">
@@ -18,21 +24,21 @@
                 <input type="text" id="bsearch" name="bsearch" placeholder="Enter search term...">
                 <input type="button" name="sbutton" id="sbutton" value="Search Bookings">
             </div>
+            <div class="admin-messages">
+                <p id="adminMessage"></p>
+            </div>
             <div class="admin-results">
-                <table id="bookingTable">
-                    <thead>
+                <table id="bookingTable">                 
+                    <thead>                        
                         <tr>
-                            <th>Booking Number</th>
-                            <th>Customer Name</th>
-                            <th>Phone Number</th>
-                            <th>Unit Number</th>
-                            <th>Street Number</th>
-                            <th>Street Name</th>
-                            <th>Suburb</th>
-                            <th>Destination Suburb</th>
-                            <th>Pick Up Date</th>
-                            <th>Pick Up Time</th>
+                            <th>Booking reference number</th>
+                            <th>Customer name</th>
+                            <th>Phone</th>
+                            <th>Pickup suburb</th>
+                            <th>Destination suburb</th>
+                            <th>Pickup date and time</th>
                             <th>Status</th>
+                            <th>Assign</th>
                         </tr>
                     </thead>
                     <tbody id="bookingBody">
@@ -40,10 +46,7 @@
                     </tbody>
                 </table>
             </div>
-            <div class="admin-messages">
-                <p id="adminMessage"></p>
-            </div>
         </div>
-        <script src="booking.js"></script>
+        <script src="admin.js"></script>
     </body>
 </html>

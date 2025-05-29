@@ -1,14 +1,19 @@
 <!-- 
  REDACTED REDACTED REDACTED 
  
- Description:
+ Description: HTML page for the CabsOnline taxi booking system.
+ This is the main customer-facing interface that allows users to submit
+ taxi booking requests. The form includes all required fields as specified
+ in the assignment requirements with proper validation attributes.
+ Features client-side JavaScript integration for form processing and
+ displays confirmation messages with booking details upon successful submission.
 -->
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <title>Booking Page</title>
-        <link rel="stylesheet" href="style/style.css">
+        <link rel="stylesheet" href="style.css">
     </head>
     <body>
         <div class="content">
@@ -49,11 +54,10 @@
                 <div class="form-row">
                     <label for="time">Pick Up Time:</label>
                     <input type="time" id="time" name="time" required>
-                </div>
-
+                </div>                
                 <div id="bookingConfirmation">
                     <h2 id="confirmationHeading"></h2>
-                    <p id="confirmationMessage"></p>
+                    <p id="reference"></p>
                 </div>
 
                 <button type="button" id="submitBooking">Book Taxi</button>

@@ -1,6 +1,13 @@
 REDACTED REDACTED REDACTED 
 
-Description:
+Description: MySQL table creation script for the CabsOnline booking system.
+This file contains the SQL command to create the 'bookings' table that stores
+all taxi booking requests. The table structure includes all required fields
+as specified in the assignment requirements:
+- booking_number: Primary key with BRN##### format
+- Customer information: name, phone, address details
+- Pickup information: date, time, location details
+- System fields: booking timestamp and assignment status
 
 Command to create table:
 CREATE TABLE bookings (
