@@ -1,6 +1,6 @@
 <?php
 /*
-REDACTED REDACTED REDACTED 
+REDACTED REDACTED 
 
 Description: Server-side PHP script for the CabsOnline admin interface.
 This file handles AJAX requests from the admin panel for booking management

@@ -1,5 +1,5 @@
 /* 
- REDACTED REDACTED REDACTED 
+ REDACTED REDACTED 
  
  Description: Client-side JavaScript for the CabsOnline taxi booking system.
  This file handles form validation, AJAX communication with the server,

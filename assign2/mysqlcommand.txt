@@ -1,4 +1,4 @@
-REDACTED REDACTED REDACTED 
+REDACTED REDACTED 
 
 Description: MySQL table creation script for the CabsOnline booking system.
 This file contains the SQL command to create the 'bookings' table that stores

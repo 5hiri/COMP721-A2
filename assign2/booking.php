@@ -1,6 +1,6 @@
 <?php
 /*
-REDACTED REDACTED REDACTED 
+REDACTED REDACTED 
 
 Description: Server-side PHP script for handling taxi booking submissions.
 This file processes AJAX requests from the booking form and manages
